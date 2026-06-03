@@ -1,0 +1,184 @@
+{
+  "blocks": {
+    "fields": {
+      "general_type_id": {
+        "required": true,
+        "validators": {
+          "notempty": true
+        }
+      },
+      "images": {
+        "required": false,
+        "validators": {
+          "string": true
+        }
+      }
+    },
+    "sources": [
+      "src/modules/blocks/dto/create-block.dto.ts"
+    ]
+  },
+  "filters": {
+    "fields": {
+      "identifier": {
+        "required": true,
+        "validators": {
+          "string": true,
+          "notempty": true,
+          "max": "255"
+        }
+      },
+      "scope_types": {
+        "required": false,
+        "validators": {
+          "array": true,
+          "enum": "FilterScopeType, { each: true }"
+        }
+      }
+    },
+    "sources": [
+      "src/modules/filters/dto/create-filter.dto.ts"
+    ]
+  },
+  "discount_coupons": {
+    "fields": {
+      "code": {
+        "required": true,
+        "validators": {
+          "notempty": true,
+          "string": true,
+          "min": "COUPON_CONSTANTS.CODE_MIN_LENGTH, {\n    message: `Coupon code must contain at least ${COUPON_CONSTANTS.CODE_MIN_LENGTH} characters`,\n  }",
+          "max": "COUPON_CONSTANTS.CODE_MAX_LENGTH, {\n    message: `Coupon code cannot exceed ${COUPON_CONSTANTS.CODE_MAX_LENGTH} characters`,\n  }"
+        }
+      },
+      "is_used": {
+        "required": false,
+        "validators": {
+          "boolean": true
+        }
+      },
+      "is_reusable": {
+        "required": false,
+        "validators": {
+          "boolean": true
+        }
+      }
+    },
+    "sources": [
+      "src/modules/discounts/dto/create-discount-coupons.dto.ts",
+      "src/modules/discounts/dto/discount-coupon.dto.ts"
+    ]
+  },
+  "discounts.discount_value": {
+    "fields": {
+      "discount_type": {
+        "required": true,
+        "validators": {
+          "notempty": true,
+          "enum": "DiscountValueType"
+        }
+      },
+      "value": {
+        "required": true,
+        "validators": {
+          "notempty": true,
+          "number": true,
+          "min": "0"
+        }
+      },
+      "max_amount": {
+        "required": false,
+        "validators": {
+          "number": true,
+          "min": "0"
+        }
+      },
+      "applicability": {
+        "required": false,
+        "validators": {
+          "enum": "DiscountValueApplicability"
+        }
+      }
+    },
+    "sources": [
+      "src/modules/discounts/dto/discount-value-config.dto.ts"
+    ]
+  },
+  "discounts": {
+    "fields": {
+      "identifier": {
+        "required": true,
+        "validators": {
+          "notempty": true,
+          "string": true
+        }
+      },
+      "type": {
+        "required": true,
+        "validators": {
+          "notempty": true,
+          "enum": "DiscountType"
+        }
+      },
+      "condition_logic": {
+        "required": false,
+        "validators": {
+          "enum": "ConditionLogic"
+        }
+      },
+      "selected_attribute_markers": {
+        "required": false,
+        "validators": {
+          "string": true
+        }
+      },
+      "gifts_replace_cart_items": {
+        "required": false,
+        "validators": {
+          "boolean": true
+        }
+      }
+    },
+    "sources": [
+      "src/modules/discounts/dto/create-discount.dto.ts"
+    ]
+  },
+  "templates": {
+    "fields": {
+      "general_type_id": {
+        "required": true,
+        "validators": {
+          "int": true
+        }
+      },
+      "identifier": {
+        "required": true,
+        "validators": {
+          "notempty": true
+        }
+      },
+      "title": {
+        "required": true,
+        "validators": {
+          "notempty": true
+        }
+      }
+    },
+    "sources": [
+      "src/modules/templates/dto/create-template.dto.ts"
+    ]
+  },
+  "attributes_sets": {
+    "fields": {
+      "title": {
+        "required": true,
+        "validators": {
+          "notempty": true
+        }
+      }
+    },
+    "sources": [
+      "src/modules/attributes-sets/dto/create-attributes-set.dto.ts"
+    ]
+  }
+}

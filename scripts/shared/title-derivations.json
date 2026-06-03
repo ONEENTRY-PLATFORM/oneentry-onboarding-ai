@@ -1,0 +1,78 @@
+{
+  "_comment": "Source of truth for hub/catalog/block title derivations. Used by post-mapper-fixer.py, post-inspector-fixer.py, and referenced in entity-mapper.md and oneentry-invariants.md §18. If you change this — update the references. ⚠ VERTICAL DEFAULTS: the dictionaries below (hub_titles, composite_catalog.genders/leaves, block_default_titles) are populated with fashion-shop / e-commerce vocabulary derived from the reference test project. For projects in other verticals (hotel, restaurant, LMS, B2B SaaS, etc.) extend with the vertical's actual hub identifiers OR override via a per-project config. The derivation algorithm is universal; only the vocabulary is vertical-specific. Adding entries does not break existing projects (lookup is identifier-keyed); removing entries may break a vertical's fallback titles.",
+  "hub_titles": {
+    "root": "Home",
+    "home": "Home",
+
+    "women": "Women's",
+    "men": "Men's",
+    "kids": "Kids'",
+    "unisex": "Unisex",
+    "catalog": "Catalog",
+    "shop": "Shop",
+    "products": "Products",
+
+    "cart": "Shopping Cart",
+    "favorites": "Favorites",
+    "wishlist": "Wishlist",
+    "account": "My Account",
+    "orders": "My Orders",
+    "stores": "Our Stores",
+    "locator": "Store Locator",
+    "download": "Downloads",
+    "downloads": "Downloads",
+    "checkout": "Checkout",
+
+    "info": "Information",
+    "help": "Help Center",
+    "support": "Support",
+    "blog": "Blog",
+    "news": "News",
+
+    "clothing": "Clothing",
+    "shoes": "Shoes",
+    "bags": "Bags",
+    "accessories": "Accessories",
+    "sale": "Sale",
+    "new": "New Arrivals",
+    "new-arrivals": "New Arrivals",
+
+    "404": "Page Not Found",
+    "not-found": "Page Not Found",
+    "500": "Server Error"
+  },
+  "composite_catalog": {
+    "_comment": "Composite catalog-leaf pages: identifier = '{gender_or_hub}-{category}'. Built deterministically from <gender> + <category>, NOT hallucinated (§18 exception). Genders supplied by hub_titles[<gender>] when present; categories by hub_titles[<leaf>]. Possessive form for gender is used: 'women' -> \"Women's\", 'men' -> \"Men's\". Example: 'women-accessories' -> \"Women's Accessories\".",
+    "genders": ["women", "men", "kids", "unisex"],
+    "leaves": ["clothing", "shoes", "bags", "accessories", "sale", "new", "new-arrivals"],
+    "gender_possessive": {
+      "women": "Women's",
+      "men": "Men's",
+      "kids": "Kids'",
+      "unisex": "Unisex"
+    }
+  },
+  "block_default_titles": {
+    "_comment": "Defaults for blocks with null title from source. Used as fallback when post-mapper-fixer didn't find a real <h1>/<h2>/SECTION_TITLES in the component source. These are UX defaults (deterministic identifier -> neutral human label), not hallucinations (§18 exception for blocks).",
+    "hero": "Hero",
+    "hero_slider": "Hero slider",
+    "promo_block": "Promo",
+    "discount_banner": "Discount banner",
+    "info_sections": "Information",
+    "faq": "Frequently asked questions",
+    "faq_block": "Frequently asked questions",
+    "cross_sell": "You may also like",
+    "store_locations": "Our stores",
+    "newsletter": "Subscribe",
+    "category_section": "Shop by category",
+    "shop_by_category": "Shop by category",
+    "catalog_cross_sell": "Complete your look",
+    "catalog_trend_blocks": "We think you'll love",
+    "recommendations_carousel": "You may also like",
+    "recently_viewed": "Recently viewed",
+    "product_reviews": "Customer reviews",
+    "men_collection": "Best sellers",
+    "women_collection": "New arrivals",
+    "new_arrivals_block": "Sale"
+  }
+}

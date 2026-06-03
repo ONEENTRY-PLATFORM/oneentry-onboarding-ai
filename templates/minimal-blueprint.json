@@ -1,0 +1,273 @@
+{
+  "tables": {
+    "attributes_sets": [
+      {
+        "id": "@aset.users",
+        "identifier": "forUsers",
+        "type_id": 6,
+        "title": "For users",
+        "schema": {
+          "email": {
+            "type": "string",
+            "isLogin": true,
+            "position": 1,
+            "identifier": "email",
+            "localizeInfos": { "en_US": { "title": "Email" } }
+          },
+          "password": {
+            "type": "string",
+            "isPassword": true,
+            "position": 2,
+            "identifier": "password",
+            "localizeInfos": { "en_US": { "title": "Password" } }
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "@aset.user_groups",
+        "identifier": "forUserGroups",
+        "type_id": 8,
+        "title": "For user groups",
+        "schema": {},
+        "properties": {}
+      },
+      {
+        "id": "@aset.products",
+        "identifier": "forProducts",
+        "type_id": 5,
+        "title": "Products default",
+        "schema": {
+          "title": {
+            "type": "string",
+            "position": 1,
+            "identifier": "title",
+            "localizeInfos": { "en_US": { "title": "Title" } }
+          },
+          "sku": {
+            "type": "string",
+            "isSku": true,
+            "position": 2,
+            "identifier": "sku",
+            "localizeInfos": { "en_US": { "title": "SKU" } }
+          },
+          "price": {
+            "type": "real",
+            "isPrice": true,
+            "position": 3,
+            "identifier": "price",
+            "localizeInfos": { "en_US": { "title": "Price" } }
+          },
+          "preview": {
+            "type": "image",
+            "isProductPreview": true,
+            "isCompress": true,
+            "position": 4,
+            "identifier": "preview",
+            "localizeInfos": { "en_US": { "title": "Preview" } }
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "@aset.pages",
+        "identifier": "forPages",
+        "type_id": 4,
+        "title": "Pages default",
+        "schema": {
+          "title": {
+            "type": "string",
+            "position": 1,
+            "identifier": "title",
+            "localizeInfos": { "en_US": { "title": "Title" } }
+          },
+          "description": {
+            "type": "text",
+            "position": 2,
+            "identifier": "description",
+            "localizeInfos": { "en_US": { "title": "Description" } }
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "@aset.forms_signin",
+        "identifier": "forForms_signin",
+        "type_id": 7,
+        "title": "Sign in/up form",
+        "schema": {
+          "email": {
+            "type": "string",
+            "isLogin": true,
+            "position": 1,
+            "identifier": "email",
+            "localizeInfos": { "en_US": { "title": "Email" } }
+          },
+          "password": {
+            "type": "string",
+            "isPassword": true,
+            "position": 2,
+            "identifier": "password",
+            "localizeInfos": { "en_US": { "title": "Password" } }
+          },
+          "sign_up": {
+            "type": "radioButton",
+            "isSignUp": true,
+            "position": 3,
+            "identifier": "sign_up",
+            "localizeInfos": { "en_US": { "title": "Sign up" } }
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "@aset.admins",
+        "identifier": "forAdmins",
+        "type_id": 1,
+        "title": "For admins",
+        "schema": {},
+        "properties": {}
+      },
+      {
+        "id": "@aset.blocks_default",
+        "identifier": "forBlocks_default",
+        "type_id": 2,
+        "title": "Blocks default",
+        "schema": {
+          "title": {
+            "type": "string",
+            "position": 1,
+            "identifier": "title",
+            "localizeInfos": { "en_US": { "title": "Title" } }
+          },
+          "description": {
+            "type": "text",
+            "position": 2,
+            "identifier": "description",
+            "localizeInfos": { "en_US": { "title": "Description" } }
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "user_groups": [
+      {
+        "id": "@ug.guest",
+        "identifier": "guest",
+        "attribute_set_id": "@aset.user_groups",
+        "localize_infos": { "en_US": { "title": "Guest" } },
+        "is_visible": true
+      },
+      {
+        "id": "@ug.user",
+        "identifier": "user",
+        "attribute_set_id": "@aset.user_groups",
+        "localize_infos": { "en_US": { "title": "User" } },
+        "is_visible": true
+      },
+      {
+        "id": "@ug.admin",
+        "identifier": "admin",
+        "attribute_set_id": "@aset.user_groups",
+        "localize_infos": { "en_US": { "title": "Admin" } },
+        "is_visible": true
+      }
+    ],
+    "product_statuses": [
+      {
+        "id": "@ps.active",
+        "identifier": "active",
+        "is_default": true,
+        "localize_infos": { "en_US": { "title": "Active" } }
+      },
+      {
+        "id": "@ps.draft",
+        "identifier": "draft",
+        "is_default": false,
+        "localize_infos": { "en_US": { "title": "Draft" } }
+      },
+      {
+        "id": "@ps.archived",
+        "identifier": "archived",
+        "is_default": false,
+        "localize_infos": { "en_US": { "title": "Archived" } }
+      }
+    ],
+    "forms": [
+      {
+        "id": "@form.signin",
+        "identifier": "signin",
+        "type": "sing_in_up",
+        "processing_type": "db",
+        "attribute_set_id": "@aset.forms_signin",
+        "localize_infos": {
+          "en_US": {
+            "title": "Sign in / Sign up",
+            "titleForSite": "Account",
+            "successMessage": "OK",
+            "unsuccessMessage": "Error"
+          }
+        }
+      }
+    ],
+    "users_auth_providers": [
+      {
+        "id": "@uap.email",
+        "identifier": "email",
+        "type": "email",
+        "form_id": "@form.signin",
+        "user_group_id": "@ug.user",
+        "is_active": true,
+        "is_check_code": false,
+        "localize_infos": { "en_US": { "title": "Email auth" } }
+      }
+    ],
+    "pages": [
+      {
+        "id": "@page.root",
+        "identifier": "root",
+        "parent_id": null,
+        "general_type_id": 4,
+        "page_url": "",
+        "attribute_set_id": "@aset.pages",
+        "localize_infos": {
+          "en_US": {
+            "title": "Home",
+            "plainContent": "",
+            "htmlContent": "",
+            "menuTitle": "Home"
+          }
+        },
+        "is_visible": true,
+        "depth": 0
+      }
+    ],
+    "products": [
+      {
+        "id": "@product.sample",
+        "identifier": "sample",
+        "attribute_set_id": "@aset.products",
+        "localize_infos": { "en_US": { "title": "Sample product" } },
+        "is_visible": true
+      }
+    ],
+    "blocks": [
+      {
+        "id": "@block.hero",
+        "identifier": "hero",
+        "general_type_id": 1,
+        "attribute_set_id": "@aset.blocks_default",
+        "localize_infos": { "en_US": { "title": "Hero block" } },
+        "is_visible": true
+      }
+    ],
+    "block_pages_mn": [
+      {
+        "id": "@bpm.hero__root",
+        "page_id": "@page.root",
+        "block_id": "@block.hero",
+        "is_nested": false
+      }
+    ]
+  }
+}
