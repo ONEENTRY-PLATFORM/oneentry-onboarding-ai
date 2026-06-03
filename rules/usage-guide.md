@@ -13,7 +13,7 @@ All blueprint-pipeline documentation is **English-only**. This applies to every 
 
 - `agents_datasets/rules/**.md` (this file, `oneentry-invariants.md`, `filters-setup.md`, `users-architecture.md`, `post-import-orchestration.md`, etc.)
 - `agents_datasets/.claude/agents/**.md` (`blueprint-validator.md`, `blueprint-builder.md`, `blueprint-auditor.md`, `code-inspector.md`, `entity-mapper.md`)
-- `.claude/.claude/agents/**.md` (mirror of the above when used as Claude Code sub-agents)
+- `.claude/agents/**.md` (mirror of the above when used as Claude Code sub-agents)
 - Inline comments in JSON examples, validator rule prose (`Source:`, `For each row in…`, `Severity: …`), `[ASSUMPTION]` blocks, warning/error message templates.
 
 **Rationale:** the blueprint pipeline runs across projects, contributors and AI agents that operate in English. Mixing locales fragments grep, breaks token namespaces consistency, and forces translators on every change.
