@@ -224,5 +224,5 @@ For each `forProducts_<segment>.schema`:
 - `agents_datasets/rules/discounts-setup.md` — Discounts module setup (post-import REST).
 - `agents_datasets/rules/users-architecture.md` — analogous NARROW principle for forUsers.
 - `agents_datasets/rules/oneentry-invariants.md` §15 — product_statuses preseeded rules.
-- `agents_datasets/agents/entity-mapper.md` Step 3.2 (REPEATED_VALUES_AS_LIST) and Step 3.3 (FORBIDDEN_PRODUCT_FIELDS filter).
-- `agents_datasets/agents/code-inspector.md` Step 5.8 (discount_signals detection) and Step 5.9 (repeated-values extraction for listTitles).
+- `agents_datasets/.claude/agents/entity-mapper.md` Step 3.2 (REPEATED_VALUES_AS_LIST) and Step 3.3 (FORBIDDEN_PRODUCT_FIELDS filter).
+- `agents_datasets/.claude/agents/code-inspector.md` Step 5.8 (discount_signals detection) and Step 5.9 (repeated-values extraction for listTitles).

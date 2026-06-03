@@ -39,7 +39,7 @@ git clone https://github.com/<your-org>/oneentry-blueprint-ai.git
 cd oneentry-blueprint-ai
 ```
 
-In Claude Code, point the project to this folder (`/init` or open it as the working directory). The slash command `/blueprint` becomes available automatically — Claude Code auto-discovers `commands/*.md` and `agents/*.md`.
+In Claude Code, point the project to this folder (`/init` or open it as the working directory). The slash command `/blueprint` becomes available automatically — Claude Code auto-discovers `.claude/commands/*.md` and `.claude/agents/*.md`.
 
 ---
 
@@ -104,8 +104,8 @@ Or use the OneEntry admin panel: **Settings → Import → Blueprint**.
 
 | Folder                             | What it is                                                                               | Edit it?        |
 | ---------------------------------- | ---------------------------------------------------------------------------------------- | --------------- |
-| `agents/`                          | The 5 AI subagent prompts (Inspector, Mapper, Builder, Validator, Auditor)               | No              |
-| `commands/blueprint.md`            | The `/blueprint` slash command — pipeline orchestrator                                   | No              |
+| `.claude/agents/`                          | The 5 AI subagent prompts (Inspector, Mapper, Builder, Validator, Auditor)               | No              |
+| `.claude/commands/blueprint.md`            | The `/blueprint` slash command — pipeline orchestrator                                   | No              |
 | `rules/`                           | Business rules: attribute types, OneEntry invariants, entity patterns                    | Maintainer only |
 | `rules/generated/`                 | Auto-generated from the OneEntry Platform source (table whitelist, FK, NOT NULL)         | Auto            |
 | `scripts/`                         | Deterministic Python: `build-blueprint.py`, `validate-blueprint.py`, post-import helpers | No              |
@@ -131,7 +131,7 @@ This is by design — secrets must never live in a blueprint file.
 
 | Symptom                                         | Try this                                                                                                                |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `/blueprint` command not visible in Claude Code | Make sure you're inside this repo's folder; check `commands/blueprint.md` exists                                        |
+| `/blueprint` command not visible in Claude Code | Make sure you're inside this repo's folder; check `.claude/commands/blueprint.md` exists                                        |
 | Validator reports `NOT READY`                   | Open `output/<project>.validation.md` — top of the file lists the errors with line refs                                 |
 | Pipeline picks up wrong entities                | Refine your app's component / page naming; or open `output/<project>.inspector.yaml` and rerun the later steps manually |
 | Want to regenerate `rules/generated/`           | Only the maintainer can — they need a local copy of the OneEntry Platform source                                        |
@@ -140,7 +140,7 @@ This is by design — secrets must never live in a blueprint file.
 
 ## Contributing
 
-The agents (`agents/*.md`), rules (`rules/*.md`) and scripts (`scripts/*.py`) are versioned together. If you hit a bug — open an issue with:
+The agents (`.claude/agents/*.md`), rules (`rules/*.md`) and scripts (`scripts/*.py`) are versioned together. If you hit a bug — open an issue with:
 
 - Your `output/<project>.log.md`
 - Your `output/<project>.validation.md`

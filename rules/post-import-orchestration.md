@@ -122,7 +122,7 @@ Load it when implementing or auditing any post-import step.
 
 ## When to run
 
-After step 4 (validator PASS) and **the actual successful blueprint load** via `POST /api/admin/import/from-blueprint?dry_run=false`. That is, this is **Step 6** in `commands/blueprint.md`:
+After step 4 (validator PASS) and **the actual successful blueprint load** via `POST /api/admin/import/from-blueprint?dry_run=false`. That is, this is **Step 6** in `.claude/commands/blueprint.md`:
 
 ```
 Step 0. Pre-checks

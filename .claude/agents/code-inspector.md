@@ -357,7 +357,7 @@ Trigger heuristics (minimum):
 | Name `Form`/`Login`/`Signup`/`Contact`/`Review`/`Feedback` | `form-submission` | `agents_datasets/ClaudeInfos/examples/03-form-submission.md` |
 | Name `FAQ`/`City`/`Country`/`Brand`/`Partner`/`Testimonial` | `collections-faq` | `agents_datasets/ClaudeInfos/examples/09-collections.md` (now IN whitelist — emit into `tables.collections` + `tables.collection_rows`) |
 | Permission/Role guards in routes / RBAC config / Role enum | `user-permissions` | `agents_datasets/rules/users-architecture.md` (→ emit into `tables.user_permissions` + `tables.user_group_permissions_mn`) |
-| Form-module binding (e.g. registration form attached to Users module) | `form-module-config` | `agents_datasets/agents/entity-mapper.md` Step 9.9 (emit into `tables.form_module_config`) |
+| Form-module binding (e.g. registration form attached to Users module) | `form-module-config` | `agents_datasets/.claude/agents/entity-mapper.md` Step 9.9 (emit into `tables.form_module_config`) |
 | Name `Discount`/`Coupon`/`Bonus`/`Promo`/`Subscription`/`Plan` | `discount-promo` or `subscriptions-billing` | `agents_datasets/ClaudeInfos/examples/05-discount-promo.md` / `17-subscriptions-billing.md` |
 | Name `Cart`/`Wishlist`/`Favorites`/`RecentlyViewed` (as entity, not as form) | `user-activity-cart` | `agents_datasets/ClaudeInfos/examples/18-user-activity-cart-wishlist.md` |
 | Name `Menu`/`Navigation`/`HeaderMenu`/`FooterMenu` | `menu` | `agents_datasets/ClaudeInfos/examples/13-menus-and-markers.md` |
@@ -558,7 +558,7 @@ forms:
 
 ### Step 5.5 Account-section scan (added 2026-05-31)
 
-Inspector walks the project's `account/` directory and emits `account_sections[]` so the mapper can build dedicated Account-section data-forms (`forForms_my_data`, `forForms_subscriptions`, `forForms_loyalty`, `forForms_service_request`, `forForms_feedback`, `forForms_refer_a_friend`) — see `agents/entity-mapper.md` Step 3.5.
+Inspector walks the project's `account/` directory and emits `account_sections[]` so the mapper can build dedicated Account-section data-forms (`forForms_my_data`, `forForms_subscriptions`, `forForms_loyalty`, `forForms_service_request`, `forForms_feedback`, `forForms_refer_a_friend`) — see `.claude/agents/entity-mapper.md` Step 3.5.
 
 #### 5.5.1 Where to look
 
@@ -654,7 +654,7 @@ Inspector also captures sections that look like account sections but live elsewh
 
 ### Step 5.6 User-group business logic signals (added 2026-05-31)
 
-Inspector greps the project for signals that user groups carry **business logic** (not just auth-role buckets) and emits a list. The mapper uses this to decide whether `forUserGroups.schema` stays empty or gets fields (`default_discount`, `vip_status`, etc.) — see `agents/entity-mapper.md` Step 2 "forUserGroups schema rules".
+Inspector greps the project for signals that user groups carry **business logic** (not just auth-role buckets) and emits a list. The mapper uses this to decide whether `forUserGroups.schema` stays empty or gets fields (`default_discount`, `vip_status`, etc.) — see `.claude/agents/entity-mapper.md` Step 2 "forUserGroups schema rules".
 
 #### 5.6.1 Grep patterns
 

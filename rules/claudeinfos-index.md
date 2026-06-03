@@ -58,8 +58,8 @@ If the inspector recognized a trigger from column 2 in the project — the agent
 | 13 | File upload / image gallery (as an attribute) | `examples/15-file-upload-pipeline.md` | ✅ (via attribute type) |
 | 14 | Search index / facets | `examples/16-index-attributes-search.md` | ❌ |
 | 15 | Module/Plugin/Integration/ThirdParty | `examples/19-third-party-modules.md` | ❌ |
-| 16 | Permission/Role guards in routes / RBAC config / `Role` enum | `agents_datasets/rules/users-architecture.md` + `agents_datasets/agents/entity-mapper.md` Step 2 sub-section "Permissions" | ✅ (via `user_permissions` + `user_group_permissions_mn`, since 2026-05-21; natural-key upsert by `(path, section)` / `(group_id, permission_id)`) |
-| 17 | Form-module attachment (registration form bound to Users module, rating form bound to a product module) | `agents_datasets/agents/entity-mapper.md` Step 9.9 | ✅ (via `form_module_config`, since 2026-05-21; composite UNIQUE `(module_id, form_id)`) |
+| 16 | Permission/Role guards in routes / RBAC config / `Role` enum | `agents_datasets/rules/users-architecture.md` + `agents_datasets/.claude/agents/entity-mapper.md` Step 2 sub-section "Permissions" | ✅ (via `user_permissions` + `user_group_permissions_mn`, since 2026-05-21; natural-key upsert by `(path, section)` / `(group_id, permission_id)`) |
+| 17 | Form-module attachment (registration form bound to Users module, rating form bound to a product module) | `agents_datasets/.claude/agents/entity-mapper.md` Step 9.9 | ✅ (via `form_module_config`, since 2026-05-21; composite UNIQUE `(module_id, form_id)`) |
 
 **Notes:**
 

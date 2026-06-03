@@ -354,6 +354,6 @@ All seeded in the CMS admin-rights seed migrations (preseeded). Orchestrator doe
 
 - `agents_datasets/rules/products-architecture.md` — why `sale_price` must NOT live in `forProducts_*.schema`.
 - `agents_datasets/rules/menus-setup.md` — analogous post-import pattern (out-of-whitelist + REST).
-- `agents_datasets/agents/entity-mapper.md` Step 9.11 — emission of `post_import_discounts[]`.
-- `agents_datasets/agents/code-inspector.md` Step 5.8 — discount signals detection.
+- `agents_datasets/.claude/agents/entity-mapper.md` Step 9.11 — emission of `post_import_discounts[]`.
+- `agents_datasets/.claude/agents/code-inspector.md` Step 5.8 — discount signals detection.
 - `agents_datasets/scripts/post-import-orchestrator.py` — `task_post_import_discounts`.

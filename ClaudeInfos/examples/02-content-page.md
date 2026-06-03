@@ -71,7 +71,7 @@ Each `general_type` is linked to a module (`pages`, `blocks`) via `module_genera
 
 ## Full jsonb with data
 
-> **Anti-hallucination (for dataset-pipeline agents).** All string values inside `localize_infos` (`title`, `menuTitle`, `plainContent`, `htmlContent`, `mdContent`) and string attributes in `attributes_sets.<lang>` must come from **real sources in the target project's code** (see `agents_datasets/rules/oneentry-invariants.md` §18, `agents_datasets/agents/code-inspector.md` §3.6). Reconstructing these values from the identifier, file name, or "common sense" is forbidden. If the value isn't found in code — the field = `null`, and `entity-mapper` records a warning. Suspicious matches with Title Case of the identifier are caught by `blueprint-validator` (S36, WARNING).
+> **Anti-hallucination (for dataset-pipeline agents).** All string values inside `localize_infos` (`title`, `menuTitle`, `plainContent`, `htmlContent`, `mdContent`) and string attributes in `attributes_sets.<lang>` must come from **real sources in the target project's code** (see `agents_datasets/rules/oneentry-invariants.md` §18, `agents_datasets/.claude/agents/code-inspector.md` §3.6). Reconstructing these values from the identifier, file name, or "common sense" is forbidden. If the value isn't found in code — the field = `null`, and `entity-mapper` records a warning. Suspicious matches with Title Case of the identifier are caught by `blueprint-validator` (S36, WARNING).
 
 ### Page "About" (`common_page`)
 

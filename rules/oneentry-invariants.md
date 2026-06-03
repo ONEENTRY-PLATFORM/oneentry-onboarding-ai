@@ -89,7 +89,7 @@ The builder MUST verify this and fail if the rule is violated (the validator per
 
 ## 7. Localization — every language from `inspector.yaml.detected_languages`
 
-In `localizeInfos` / `localize_infos` (for forms, attributes, pages, statuses, templates, user_groups, products, blocks) — **iterate over every language in `inspector.yaml.detected_languages`** (see `agents/code-inspector.md` Step 1.2). This is an array of 1..~10 OneEntry keys (`en_US`, `de_DE`, `fr_FR`, `it_IT`, ...).
+In `localizeInfos` / `localize_infos` (for forms, attributes, pages, statuses, templates, user_groups, products, blocks) — **iterate over every language in `inspector.yaml.detected_languages`** (see `.claude/agents/code-inspector.md` Step 1.2). This is an array of 1..~10 OneEntry keys (`en_US`, `de_DE`, `fr_FR`, `it_IT`, ...).
 
 **Rules:**
 
@@ -457,10 +457,10 @@ Three narrow categories of derived titles are allowed despite no direct source i
 Anything outside these three categories falls back to the original rule: leave `null` and emit `missing_title` warning.
 
 See also:
-- `agents_datasets/agents/code-inspector.md` §3.6 — how the inspector populates `source`.
-- `agents_datasets/agents/entity-mapper.md` Step 7 (localize_infos / NO HALLUCINATION rule + hub/composite exceptions).
-- `agents_datasets/agents/blueprint-validator.md` S36 — synthetic-title detector (skips hub + composite leaves).
-- `agents_datasets/agents/blueprint-validator.md` S58 — null-title detector for hub/catalog pages (errors).
+- `agents_datasets/.claude/agents/code-inspector.md` §3.6 — how the inspector populates `source`.
+- `agents_datasets/.claude/agents/entity-mapper.md` Step 7 (localize_infos / NO HALLUCINATION rule + hub/composite exceptions).
+- `agents_datasets/.claude/agents/blueprint-validator.md` S36 — synthetic-title detector (skips hub + composite leaves).
+- `agents_datasets/.claude/agents/blueprint-validator.md` S58 — null-title detector for hub/catalog pages (errors).
 - `agents_datasets/scripts/shared/title-derivations.json` — single source of truth for derivations.
 
 ## 19. Hub pages vs Catalog pages — `general_type_id` discipline

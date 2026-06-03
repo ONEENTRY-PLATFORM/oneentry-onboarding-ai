@@ -67,7 +67,7 @@ replacement for the fashion reference):
 OneEntry-side constants are NOT vertical-specific and must not be changed:
 module_id (preseed modules 1..18), general_type_id (STABLE 3/4/17/21),
 attribute_type_id (1..11), schema-id contract ('<type>_id<N>'), the 24-table
-whitelist, and form-purpose -> module_id mapping (agents/entity-mapper.md
+whitelist, and form-purpose -> module_id mapping (.claude/agents/entity-mapper.md
 Step 9.9). See rules/oneentry-invariants.md §1-19 for the authoritative
 list of OneEntry invariants.
 """

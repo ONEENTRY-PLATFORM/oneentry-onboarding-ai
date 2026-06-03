@@ -17,7 +17,7 @@ The validator checks the blueprint **in isolation** (structure, types, FK). You 
 - `agents_datasets/rules/dynamic-ids.md` — snapshot id for DYNAMIC
 - `agents_datasets/rules/block-types.md` — block types
 - `agents_datasets/rules/usage-guide.md` — which entities to create when
-- `agents_datasets/agents/code-inspector.md` (Step 8.3.1) — taxonomy of kinds
+- `agents_datasets/.claude/agents/code-inspector.md` (Step 8.3.1) — taxonomy of kinds
 
 ## I/O Contract
 

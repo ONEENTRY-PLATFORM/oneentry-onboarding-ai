@@ -106,7 +106,7 @@ Users will receive fresh rules via `git pull` or a fresh download.
 | Before releasing agent updates | Run, make sure the rules are fresh |
 | After adding a new entity column to cms | Run, verify it was picked up |
 | Once a month | Run just for hygiene |
-| Before every `/blueprint` | **Not needed** — step 0.5 in `commands/blueprint.md` already does it (if cms is found locally) |
+| Before every `/blueprint` | **Not needed** — step 0.5 in `.claude/commands/blueprint.md` already does it (if cms is found locally) |
 
 ---
 
@@ -144,7 +144,7 @@ If you see `✗ <table>: NOT FOUND` — the entity file was not found, check the
 This means a manual section that used to be in the file is **not embedded in the gen-rules.py template**. Decide:
 - If this info should always live in `rules/generated/<file>.md` → add it to the template in `gen-rules.py` (`gen_*_md` method), re-run.
 - If this info is general business logic → move it to `rules/coverage-checklist.md` or `rules/oneentry-invariants.md` (they are NOT regenerated).
-- If this info is an instruction for a specific agent → move it to `agents/blueprint-{builder,validator}.md`.
+- If this info is an instruction for a specific agent → move it to `.claude/agents/blueprint-{builder,validator}.md`.
 
 ### Roll back the regeneration
 

@@ -96,7 +96,7 @@ Algorithm:
 ## What mapper agents MUST emit
 
 - `blocks[]` with `identifier` matching the React component file name (snake_case): `HeroSlider.tsx` → `'hero_slider'`, `CatalogCrossSell.tsx` → `'catalog_cross_sell'`.
-- `pages[]` with **canonical identifiers derived from the project's route/page hierarchy** (see `agents/code-inspector.md` "Route hierarchy → page tree" — every file-system route becomes a page; identifier = slugified segments joined by `-`). The alias table in the previous section is illustrative for one specific test project; for ANY other project the role detector picks identifiers from that project's actual `pages[]` — never hardcode them into the mapper logic.
+- `pages[]` with **canonical identifiers derived from the project's route/page hierarchy** (see `.claude/agents/code-inspector.md` "Route hierarchy → page tree" — every file-system route becomes a page; identifier = slugified segments joined by `-`). The alias table in the previous section is illustrative for one specific test project; for ANY other project the role detector picks identifiers from that project's actual `pages[]` — never hardcode them into the mapper logic.
 - **Skip** `block_pages_mn` entirely. The fixer handles it.
 
 ## What mapper agents MUST NOT do

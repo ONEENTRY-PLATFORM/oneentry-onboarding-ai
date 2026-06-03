@@ -246,7 +246,7 @@ def task_user_permissions(cms_url, token, log, dry_run):
     populate the new whitelist tables, but for any new project it should be
     a no-op (no `user_permissions` in `mapped`).
 
-    See `agents_datasets/agents/entity-mapper.md` Step 2 "Permissions for
+    See `agents_datasets/.claude/agents/entity-mapper.md` Step 2 "Permissions for
     user_groups" for the in-blueprint emission template.
     """
     log.append('## 1. User group permissions (⚠ DEPRECATED — prefer in-blueprint emission since 2026-05-21)\n')
@@ -560,7 +560,7 @@ def task_post_import_slides(cms_url, token, mapped, log, dry_run):
 
     # Two emission shapes are accepted:
     #
-    #   A. NESTED (entity-mapper / agents/entity-mapper.md format):
+    #   A. NESTED (entity-mapper / .claude/agents/entity-mapper.md format):
     #      post_import_slides:
     #        - block_identifier: hero
     #          source_data_file: src/app/data/heroSlides.ts

@@ -366,7 +366,7 @@ Six tables moved INTO the 24-table whitelist on 2026-05-21 and now have explicit
 - Each `collection_row` carries `lang_code` and `form_data` (jsonb with the row payload).
 - `collections.identifier` is the natural key — loader upserts. Re-import is safe.
 - `collection_rows` skip-if-parent-has-children: on re-import, existing rows survive.
-- See `agents/entity-mapper.md` Step 9.8 for the inline emission template.
+- See `.claude/agents/entity-mapper.md` Step 9.8 for the inline emission template.
 
 ### 8.2 `form_module_config`
 
@@ -376,7 +376,7 @@ Six tables moved INTO the 24-table whitelist on 2026-05-21 and now have explicit
 - For the `signin` form bind to module 9 (Users): `{ module_id: 9, form_id: '@form.signin', is_global: true }`.
 - For order checkout forms — usually the `orders_storage.order_form_id` already covers attachment; emit `form_module_config` only when explicit "this form appears in module X" semantics are required.
 - Composite UNIQUE `(module_id, form_id)` — builder Step 13.5 dedupe rules MUST include this pair.
-- See `agents/entity-mapper.md` Step 9.9 for the inline emission template.
+- See `.claude/agents/entity-mapper.md` Step 9.9 for the inline emission template.
 
 ### 8.3 `form_data`
 
@@ -391,7 +391,7 @@ If the table key appears in your blueprint — that's almost certainly a mapper 
 **Coverage rules:**
 - `user_permissions` natural key = `(path, section)`. ~112 rows are preseeded by cms migrations — do NOT regenerate identifiers for those, just reuse via `(path, section)` and loader upserts.
 - `user_group_permissions_mn` natural key = `(group_id, permission_id)`; UNIQUE constraint via `@Index({ unique: true })`. Within one blueprint, dedupe per `(group_id, permission_id)` defensively.
-- See `agents/entity-mapper.md` Step 2 "Permissions for user_groups — emit via blueprint" for the inline template.
+- See `.claude/agents/entity-mapper.md` Step 2 "Permissions for user_groups — emit via blueprint" for the inline template.
 
 ---
 

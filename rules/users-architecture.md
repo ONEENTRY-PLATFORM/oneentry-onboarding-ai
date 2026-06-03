@@ -137,7 +137,7 @@ tables:
     # ... same for loyalty / service_request / feedback / refer_a_friend if present
 ```
 
-⚠ **Composite UNIQUE `(module_id, form_id)`** is enforced — see `agents/blueprint-builder.md` Step 13.5 dedupe rules.
+⚠ **Composite UNIQUE `(module_id, form_id)`** is enforced — see `.claude/agents/blueprint-builder.md` Step 13.5 dedupe rules.
 
 ## ⚠ `forForms_checkout` — NARROW: order-specific fields ONLY
 

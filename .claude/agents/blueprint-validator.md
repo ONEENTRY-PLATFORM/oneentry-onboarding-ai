@@ -291,7 +291,7 @@ For each entry in `tables.user_groups[]`:
 ### S20a. Empty `forAdmins` attribute_set — ERROR
 
 For each entry in `tables.attributes_sets[]`:
-- if `identifier == 'forAdmins'` and `schema == {}` -> `[ERROR] attributes_sets contains forAdmins with empty schema {}. The set must be omitted entirely — admins.attribute_set_id is nullable and should stay null when there are no admin-specific custom fields. Emitting an empty set creates a confusing "For admins" panel in the admin UI with no fields. See agents/entity-mapper.md Step 1.`
+- if `identifier == 'forAdmins'` and `schema == {}` -> `[ERROR] attributes_sets contains forAdmins with empty schema {}. The set must be omitted entirely — admins.attribute_set_id is nullable and should stay null when there are no admin-specific custom fields. Emitting an empty set creates a confusing "For admins" panel in the admin UI with no fields. See .claude/agents/entity-mapper.md Step 1.`
 
 ### S20b. Empty `forUserGroups` attribute_set — ERROR
 
@@ -300,13 +300,13 @@ For each entry in `tables.attributes_sets[]`:
 
 ### S20c. Product-review forms misrouted to Forms module — ERROR
 
-Source: `agents/entity-mapper.md` Step 9.9 form-purpose → module_id mapping.
+Source: `.claude/agents/entity-mapper.md` Step 9.9 form-purpose → module_id mapping.
 
 For each entry in `tables.form_module_config[]`:
-- if `module_id == 2` AND `form_id` resolves to a form whose `identifier` matches one of the patterns `review*`, `rating*`, `reserve_in_store`, `notify_back_in_stock`, `ask_about_product`, `size_request` -> `[ERROR] form_module_config[<idx>]: form '<identifier>' is product-scoped and should bind to module_id: 3 (Catalog), not 2 (Forms). Admins expect product-review forms under the Catalog module. See agents/entity-mapper.md Step 9.9.`
+- if `module_id == 2` AND `form_id` resolves to a form whose `identifier` matches one of the patterns `review*`, `rating*`, `reserve_in_store`, `notify_back_in_stock`, `ask_about_product`, `size_request` -> `[ERROR] form_module_config[<idx>]: form '<identifier>' is product-scoped and should bind to module_id: 3 (Catalog), not 2 (Forms). Admins expect product-review forms under the Catalog module. See .claude/agents/entity-mapper.md Step 9.9.`
 
 Same check for users-scoped forms misrouted to Forms (module_id 2):
-- if `module_id == 2` AND `form_id` resolves to a form whose `identifier` matches `signin*`, `signup*`, `login*`, `register*`, `profile*`, `my_*`, `account_*`, `subscriptions`, `loyalty`, `refer_a_friend`, `service_request`, `feedback` -> `[ERROR] form_module_config[<idx>]: form '<identifier>' is user-scoped and should bind to module_id: 9 (Users), not 2 (Forms). See agents/entity-mapper.md Step 9.9.`
+- if `module_id == 2` AND `form_id` resolves to a form whose `identifier` matches `signin*`, `signup*`, `login*`, `register*`, `profile*`, `my_*`, `account_*`, `subscriptions`, `loyalty`, `refer_a_friend`, `service_request`, `feedback` -> `[ERROR] form_module_config[<idx>]: form '<identifier>' is user-scoped and should bind to module_id: 9 (Users), not 2 (Forms). See .claude/agents/entity-mapper.md Step 9.9.`
 
 ### S21a. SKIP_IF_PARENT_HAS_CHILDREN policy — `collection_rows` re-import — WARNING
 
@@ -374,7 +374,7 @@ for table_name, ukey in COMPOSITE_UNIQUE_RULES:
 
 **This is ERROR**, not warning — loader is 100% going to fail.
 
-**Typical case for `block_products_mn`:** builder generated a row for each triple `(product, block, page)`. If a block is bound to 8 products x 8 pages = 64 rows, but the UNIQUE key is `(product, block)` without `page` — 8 unique pairs, 56 duplicates -> 56 ERROR. Builder was supposed to dedupe in step 13.5 (see `agents/blueprint-builder.md`).
+**Typical case for `block_products_mn`:** builder generated a row for each triple `(product, block, page)`. If a block is bound to 8 products x 8 pages = 64 rows, but the UNIQUE key is `(product, block)` without `page` — 8 unique pairs, 56 duplicates -> 56 ERROR. Builder was supposed to dedupe in step 13.5 (see `.claude/agents/blueprint-builder.md`).
 
 ### S22. Empty form attribute_set — WARNING (>=1 field in form)
 
@@ -1702,7 +1702,7 @@ if catalog_pages_count and not (post_import_filters or oow_filter_warning):
     )
 ```
 
-⚠ This check requires `mapped.yaml` to be in the same directory as the blueprint (standard pipeline layout — see `commands/blueprint.md`). If only `blueprint.json` is provided (e.g. manual user submission), S60 silently skips — it cannot distinguish "no filters needed" from "mapper just didn't run".
+⚠ This check requires `mapped.yaml` to be in the same directory as the blueprint (standard pipeline layout — see `.claude/commands/blueprint.md`). If only `blueprint.json` is provided (e.g. manual user submission), S60 silently skips — it cannot distinguish "no filters needed" from "mapper just didn't run".
 
 ### S62. Bull `index-data` queue trigger — INFO
 

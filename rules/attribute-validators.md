@@ -347,6 +347,6 @@ New check **S63 — Validator coverage**: for each attribute set marked `user-in
 
 - `agents_datasets/rules/users-architecture.md` §"Allowed forUsers.schema fields" — has inline validator examples.
 - `agents_datasets/rules/products-architecture.md` §"Allowed forProducts schema" — has minValue / minLength examples.
-- `agents_datasets/agents/entity-mapper.md` Step 1.5 — invokes enrich_attribute_validators.
+- `agents_datasets/.claude/agents/entity-mapper.md` Step 1.5 — invokes enrich_attribute_validators.
 - `agents_datasets/scripts/post-mapper-fixer.py::ATTR_VALIDATORS` — runtime constant.
 - `agents_datasets/rules/coverage-checklist.md` §3.X — validator coverage check.
